@@ -34,20 +34,26 @@ namespace SOLIDCalculator
                 case "+":
                     finalResult += userInputNumberToDouble();
                     checkdata.Text = ("Итого:" + finalResult.ToString());
-                    inputField.Text = (finalResult).ToString();
+                    userInputNumber = "";
+                    inputField.Text = "";
                     break;
                 case "-":
                     finalResult -= userInputNumberToDouble();
                     checkdata.Text = ("Итого:" + finalResult.ToString());
+                    userInputNumber = "";
                     inputField.Text = "";
                     break;
                 case "*":
                     finalResult *= userInputNumberToDouble();
                     checkdata.Text = ("Итого:" + finalResult.ToString());
+                    userInputNumber = "";
                     inputField.Text = "";
                     break;
                 case "/":
-
+                    finalResult /= userInputNumberToDouble();
+                    checkdata.Text = ("Итого:" + finalResult.ToString());
+                    userInputNumber = "";
+                    inputField.Text = "";
                     break;
 
             }
@@ -83,11 +89,7 @@ namespace SOLIDCalculator
                 inputField.Text = inputField.Text.Remove(inputField.Text.Length - 1);
                 userInputNumber = inputField.Text.Remove(inputField.Text.Length - 1);
             }
-            if (inputField.Text.Length == 1)
-            {
-                inputField.Text = "";
-                userInputNumber = "";
-            }
+            
         }
 
         private void numberThree_Click(object sender, EventArgs e)
@@ -149,7 +151,7 @@ namespace SOLIDCalculator
         private void minusNumber_Click(object sender, EventArgs e)
         {
             operation = "-";
-            if (stepOfMinus == 0)
+            if (stepOfMinus == 0 && operation !="")
             {
                 finalResult += userInputNumberToDouble();
                 userInputNumber = "";
