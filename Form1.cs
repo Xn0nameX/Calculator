@@ -255,6 +255,7 @@ namespace SOLIDCalculator
         {
             stepOfMulty = 0;
             finalResult = 0;
+            stepOfDivide = 0;
             stepOfMinus = 0;
             userInputNumber = "";
             operation = "";
